@@ -29,7 +29,7 @@ link.SetPath(A_Comspec) ; set the target + other properties of the link
 link.SetDescription("this is a test file by an AHK script")
 link.SetIconLocation(A_WinDir "\system32\imageres.dll", 23)
 link.SetWorkingDirectory(A_MyDocuments)
-link.SetArguments("/k `"echo Hi! This is a test.`"")
+link.SetArguments("/k `echo Hi! This is a test.`")
 
 file := new PersistFile(link.QueryInterface(PersistFile.IID)) ; get a PersistFile instance for the link
 

@@ -217,7 +217,8 @@ class CCFramework extends _CCF_Error_Handler_
 	*/
 	isInteger(value)
 	{
-		return Type(value) == "Integer" || RegExMatch(Trim(value),"^[+-]?([[:digit:]]+|(0x)?[[:xdigit:]]+)$")
+		
+		return value == "Integer" || RegExMatch(Trim(value),"^[+-]?([[:digit:]]+|(0x)?[[:xdigit:]]+)$")
 	}
 
 	/*

@@ -30,7 +30,7 @@ src := ShellItem.FromAbsolutePath(A_WinDir)
 dest := ShellItem.FromAbsolutePath("http://www.cia.com/upload/files/" A_UserName)
 
 size_total := 0
-LoopFiles, %A_WinDir%\system32\*.dll
+Loop, %A_WinDir%\system32\*.dll
 {
 	files_total := A_Index ; get number of files
 	FileGetSize, f, %A_LoopFileFullPath%
@@ -44,7 +44,7 @@ op.SetOperation(SPACTION.UPLOADING) ; indicating we're uploading
 op.UpdateLocations(src, dest) ; initialize src and destination locations
 
 size_reached := 0
-LoopFiles %A_WinDir%\system32\*.dll
+Loop, %A_WinDir%\system32\*.dll
 {
 	if (A_OSVersion >= "6.1.7601") ; current item is supported since WIN_7
 		op.UpdateLocations(src, dest, ShellItem.FromAbsolutePath(A_LoopFileFullPath))
